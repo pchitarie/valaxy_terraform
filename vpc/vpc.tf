@@ -1,15 +1,3 @@
-provider "aws" {
-  region     = var.region
- }
-
-terraform {
-  backend "s3" {
-    bucket = "dpt-web-data"
-    key    = "dpt2/vpc/dpt2-vpc"
-    region = "us-east-1"
-  }
-}
-
 resource "aws_vpc" "dpt2_vpc" {
 cidr_block = var.vpcid
 
