@@ -5,3 +5,7 @@ output "vpcid" {
 output "pub_subnet" {
     value = aws_subnet.dpt2_pub_sub.id
 }
+
+output "priv_subnet" {
+    value = aws_subnet.dpt2_priv_sub.id
+}
