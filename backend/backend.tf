@@ -1,16 +1,7 @@
 # Create S3 Bucket and DynamoDB table to store state and state lock.
 resource "aws_s3_bucket" "bucket" {
-    bucket = "dpt3-terraform-state"
-    versioning {
-        enabled = true
-    }
-    server_side_encryption_configuration {
-        rule {
-            apply_server_side_encryption_by_default {
-                sse_algorithm = "AES256"
-            }
-        }
-    }
+    bucket = "dpt4-terraform-state"
+
     object_lock_configuration {
         object_lock_enabled = "Enabled"
     }
@@ -20,7 +11,7 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 resource "aws_dynamodb_table" "terraform-lock" {
-    name           = "dpt_table"
+    name           = "dpt4_table"
     read_capacity  = 5
     write_capacity = 5
     hash_key       = "LockID"
